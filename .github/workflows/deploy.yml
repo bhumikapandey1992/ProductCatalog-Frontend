@@ -44,4 +44,4 @@ jobs:
             git pull origin main           # pull the latest changes
             docker compose up -d --build   # rebuild & restart containers
             docker image prune -f          # clean up old images
-    EOF
+      EOF
