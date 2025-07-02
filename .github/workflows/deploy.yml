@@ -27,7 +27,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
 
-      # 6) SSH into EC2 and run your deploy commands
+      # 6) SSH into EC2 and run your deploy command
       - name: Deploy via SSH
         run: |
           ssh -o StrictHostKeyChecking=no \
