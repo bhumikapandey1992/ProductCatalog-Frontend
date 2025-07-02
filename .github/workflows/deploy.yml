@@ -21,7 +21,7 @@ jobs:
       - name: Install SSH client
         run: sudo apt-get update && sudo apt-get install -y openssh-client
 
-      # 5) Load your deploy key into an ssh‐agent
+      # 5) Load your deploy key into an ssh‐agent.
       - name: Load SSH key
         uses: webfactory/ssh-agent@v0.8.0
         with:
