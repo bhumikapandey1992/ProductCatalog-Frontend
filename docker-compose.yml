@@ -5,3 +5,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    volumes:
+      # override default vhost
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      # your self-signed cert + key on the host
+      - ./ssl:/etc/nginx/ssl:ro
