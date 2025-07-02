@@ -13,7 +13,7 @@ function App() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-  fetch('http://18.117.73.165:8000/api/products/')
+  fetch('https://18.117.73.165:8000/api/products/')
     .then(res => res.json())
     .then(data => setProducts(data))
     .catch(err => console.error('Failed to fetch products:', err));
@@ -21,7 +21,7 @@ function App() {
 
   // Handler to add a new product (local state only for now)
   const handleAddProduct = async (product: Omit<Product, 'id'>) => {
-  const res = await fetch('http://18.117.73.165:8000/api/products/', {
+  const res = await fetch('https://18.117.73.165:8000/api/products/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(product),
