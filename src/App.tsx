@@ -21,7 +21,7 @@ function App() {
 
   // Handler to add a new product (local state only for now)
   const handleAddProduct = async (product: Omit<Product, 'id'>) => {
-  const res = await fetch('http://127.0.0.1:8000/api/products/', {
+  const res = await fetch('http://18.117.73.165/api/products/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(product),
