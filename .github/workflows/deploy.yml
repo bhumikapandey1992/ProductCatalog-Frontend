@@ -31,6 +31,7 @@ jobs:
       - name: Deploy via SSH
         run: |
           ssh -o StrictHostKeyChecking=no \
+           -A \
               ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             set -e                          # fail on any command error
             # add GitHub’s host key so ssh won’t complain.
