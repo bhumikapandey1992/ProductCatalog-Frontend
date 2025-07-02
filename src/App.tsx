@@ -13,7 +13,7 @@ function App() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-  fetch('http://127.0.0.1:8000/api/products/')
+  fetch('http://18.117.73.165/api/products/')
     .then(res => res.json())
     .then(data => setProducts(data))
     .catch(err => console.error('Failed to fetch products:', err));
