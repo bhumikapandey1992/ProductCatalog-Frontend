@@ -33,6 +33,10 @@ jobs:
           ssh -o StrictHostKeyChecking=no \
               ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             set -e                          # fail on any command error
+            # If the directory doesn't exist, clone it:
+            if [ ! -d "${{ github.event.repository.name }}" ]; then
+            git clone git@github.com:bhumikapandey1992/${{ github.event.repository.name }}.git
+            fi
             cd ~/${{ github.event.repository.name }}  # enter the cloned folder
             git pull origin main           # pull the latest changes
             docker compose up -d --build   # rebuild & restart containers
