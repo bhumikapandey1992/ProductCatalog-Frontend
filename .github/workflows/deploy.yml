@@ -33,6 +33,8 @@ jobs:
           ssh -o StrictHostKeyChecking=no \
               ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             set -e                          # fail on any command error
+            # add GitHub’s host key so ssh won’t complain
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
             # If the directory doesn't exist, clone it:
             if [ ! -d "${{ github.event.repository.name }}" ]; then
             git clone git@github.com:bhumikapandey1992/${{ github.event.repository.name }}.git
