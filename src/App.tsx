@@ -19,7 +19,7 @@ function App() {
     .catch(err => console.error('Failed to fetch products:', err));
 }, []);
 
-  // Handler to add a new product (local state only for now)
+  // Handler to add a new product (local state only for now) 
   const handleAddProduct = async (product: Omit<Product, 'id'>) => {
   const res = await fetch('https://theproductpeek.shop/', {
     method: 'POST',
